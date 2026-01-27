@@ -1,15 +1,15 @@
-version: '3.8'
+version: "3.8"
 
 services:
   web:
     build:
       context: .
-      dockerfile: Dockerfile   # Gebruik Dockerfile
-    container_name: php-web
+      dockerfile: Dockerfile
+    container_name: afrika-web
     ports:
       - "8080:80"
     volumes:
-      - ./html:/var/www/html   # html is de map op de host, /var/www/html is de map in de container
+      - ./html:/var/www/html
     depends_on:
       - db
     networks:
@@ -17,12 +17,11 @@ services:
 
   db:
     image: mysql:8.1
-    container_name: mysql-db
+    container_name: afrika-db
+    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: phplessen
-      MYSQL_USER: phples
-      MYSQL_PASSWORD: phples
+      MYSQL_DATABASE: afrika_cup
     ports:
       - "3306:3306"
     volumes:
@@ -32,9 +31,11 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: afrika-phpmyadmin
+    restart: always
     environment:
       PMA_HOST: db
+      PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: root
     ports:
       - "8081:80"
@@ -48,3 +49,4 @@ volumes:
 
 networks:
   app-network:
+    driver: bridge

@@ -1,22 +1,26 @@
 <?php
 
-class Database
-{
-    private $servername = "db";
-    private $username = "root";
-    private $password = "root";
+class Database {
+    private $host = 'db'; 
+    private $db   = 'afrika_cup';
+    private $user = 'root';
+    private $pass = 'root';
     protected $conn;
 
+    public function __construct() {
+        $this->conn = new PDO(
+            "mysql:host={$this->host};dbname={$this->db};charset=utf8mb4",
+            $this->user,
+            $this->pass,
+            [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            ]
+        );
+    }
 
-    function __construct()
-    {
-        try {
-            $this->conn = new PDO("mysql:host=$this->servername;dbname=phplessen", $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
-        } catch (PDOException $e) {
-            echo "Connection failed: " . $e->getMessage();
-        }
+    public function getConnection() {
+        return $this->conn;
     }
 
    
