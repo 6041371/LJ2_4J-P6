@@ -1,0 +1,386 @@
+/* Lichtere foto's in artikelen */
+.artikel-foto-licht {
+  filter: brightness(1.18) contrast(1.08);
+}
+/* filepath: c:\xampp\htdocs\ToDAY\css\style.css */
+@font-face {
+    font-family: 'Autorich Sans';
+    src: local('Autorich Sans Regular'), local('Autorich-Sans-Regular'),
+        url('../fonts/AutorichSans.woff2') format('woff2'),
+        url('../fonts/AutorichSans.woff') format('woff'),
+        url('../fonts/AutorichSans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fbc8d4;
+}
+
+.container-fluid {
+    background-color: #fff;
+    width: 100vw;
+    color: #343a40;
+    padding: 20px;
+}
+
+header {
+    background-color: #fff;
+    color: #343a40;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Algemene typografie */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fbc8d4;
+    font-family: 'Julius Sans One', sans-serif;
+    color: #333;
+}
+
+/* Standaard paragrafen */
+p {
+    font-size: 1rem;          /* 16px */
+    line-height: 1.7;
+}
+
+/* Kleinere content-tekst (zoals Onderwijskwaliteit) */
+.text-content p {
+    font-size: 0.875rem;      /* 14px */
+    line-height: 1.7;
+    color: #374151;           /* Tailwind gray-700 */
+    margin-bottom: 1rem;
+}
+
+/* Koppen */
+h1, h2, h3 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: 600;
+}
+
+
+nav a, .nav-gradient {
+    font-family: 'Autorich Sans', sans-serif;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+nav a:hover, .nav-gradient:hover, .nav-gradient-item:hover {
+  color: #000 !important;
+}
+
+.font-julius {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+
+/* assets/style.css */
+:root{font-family: Arial, Helvetica, sans-serif}
+body{margin:0;color:#111}
+.wrap{max-width:980px;margin:0 auto;padding:20px}
+.site-header{background:#fff;border-bottom:1px solid #eee}
+.site-footer{background:#111;color:#fff;padding:20px}
+.container{padding:40px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:#f7f7ff;border-radius:8px;padding:10px}
+.card img{width:100%;height:150px;object-fit:cover;border-radius:6px}
+.article-hero{display:flex;gap:20px;align-items:center}
+.article-hero .hero-img img{width:320px;height:160px;object-fit:cover}
+.article-body{margin-top:20px;line-height:1.6}
+.secret-login{position:absolute;right:8px;top:8px;width:20px;height:20px;opacity:0}
+.admin input, .admin textarea{display:block;width:100%;padding:8px;margin-bottom:10px}
+button{padding:10px 14px;border-radius:6px;border:0;background:#6b5ce5;color:#fff}
+.error{color:#a00}
+
+.card {
+  background:#fff;
+  border-radius:10px;
+  padding:15px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  transition:transform 0.2s ease;
+}
+.card:hover { transform:translateY(-3px); }
+
+
+.article-page {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.article-page article {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.article-page article h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.article-page article img {
+  display: block;
+  margin: 0 auto 20px;
+  max-width: 600px;
+  border-radius: 12px;
+}
+
+.article-page article .tekst {
+  white-space: pre-line;
+  text-align: left;
+  line-height: 1.8;
+  font-size: 1.1rem;
+  color: #333;
+  word-break: break-word;
+}
+
+.article-page article p {
+  text-align: center;
+}
+
+/* Fix markdown spacing */
+.prose p {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+
+/* Minimale lift-hover voor diensten cards */
+.group:hover {
+  transform: translateY(-6px);
+  z-index: 2;
+  color: rgba(151, 149, 240, 0.74)
+}
+
+.prose h1 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h2 {
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose h3 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+
+
+@media (max-width: 640px) {
+  a.group > span.absolute.left-0 {
+    transform: translateX(1rem) !important;
+  }
+  .max-w-6xl.mx-auto.mb-12 h3 {
+      padding-left:10rem; /* pas dit aan voor gewenste afstand */
+    }
+  a.group > span.absolute.right-0 {
+    transform: translateX(-1rem) !important;
+  }
+} 
+
+ @media (min-width: 641px) and (max-width: 1024px) {
+  a.group > span.absolute.left-0 {
+    transform: translateX(-1rem) !important;
+  }
+  .max-w-6xl.mx-auto.mb-12 h3 {
+    padding-left:21rem; /* pas dit aan voor gewenste afstand */
+  }
+  a.group > span.absolute.right-0 {
+    transform: translateX(1rem) !important;
+  }
+}
+
+
+/* ---------- MOBILE + IPAD HEADER ---------- */
+@media (max-width: 1024px) {
+
+  header {
+    flex-wrap: wrap;
+  }
+
+  /* Logo fix: breder, juiste verhouding */
+  header img {
+    width: 220px !important; /* iets groter voor iPad */
+    height: auto !important;
+    margin-right: 0 !important;
+  }
+
+  /* Verberg nav standaard */
+  #main-nav {
+    display: none;
+    width: 100%;
+    margin-left: 0 !important;
+    margin-top: 1rem;
+    flex-direction: column;
+  }
+
+  #main-nav a,
+  #main-nav .relative {
+    display: block;
+    padding: 0.75rem 0;
+  }
+
+  /* Dropdowns onder elkaar */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    padding-left: 1rem;
+    display: block;
+  }
+
+  /* Hamburger knop */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .hamburger span {
+    width: 28px;
+    height: 2px;
+    background: #343a40;
+    display: block;
+  }
+
+
+  
+}
+
+/* ---------- DESKTOP ---------- */
+@media (min-width: 1025px) {
+  .hamburger {
+    display: none;
+  }
+
+  #main-nav {
+    display: flex !important;
+  }
+}
+
+/* iPad / tablet: onder elkaar */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .grid.grid-cols-1.md\:grid-cols-3 {
+    grid-template-columns: 1fr !important; /* alles onder elkaar */
+    gap: 4rem; /* optioneel, ruimte tussen de cards */
+  }
+
+  /* Haakjes aanpassen voor tablet */
+  a.group > span.absolute.left-0 {
+    transform: translateX(10rem) !important;
+  }
+
+  a.group > span.absolute.right-0 {
+    transform: translateX(-10rem) !important;
+  }
+}
+
+/* iPad / tablet: hamburger nav iets naar rechts */
+@media (min-width: 641px) and (max-width: 1024px) {
+  #main-nav {
+    margin-left: 16rem !important; /* schuift de hele nav naar rechts */
+    width: auto !important; /* zorg dat het menu niet te smal wordt */
+  }
+}
+
+/* Groot desktop-logo: vanaf 1240px altijd dezelfde breedte */
+@media (min-width: 1240px) {
+  header img {
+    width: 220px !important; /* vaste breedte voor desktop */
+    height: auto !important; /* verhouding behouden */
+  }
+}
+
+/* ---------- MOBILE + IPAD ---------- */
+@media (max-width: 1024px) {
+  header img {
+    width: 220px !important; /* of kleiner als je wilt */
+    height: auto !important;
+  }
+}
+
+/* ---------- SMALL DESKTOP ---------- */
+@media (min-width: 1025px) and (max-width: 1239px) {
+  header img {
+    width: 220px !important; /* vaste breedte voor small desktop */
+    height: auto !important;
+  }
+}
+
+/* ---------- LARGE DESKTOP ---------- */
+@media (min-width: 1240px) {
+  header img {
+    width: 220px !important; /* vaste breedte voor large desktop */
+    height: auto !important;
+  }
+}
+
+.bg-pink-custom {
+  background-color: #FBC8D4;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem; /* afgerond, zoals rounded-2xl */
+  box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+}
+
+/* Tablet / iPad */
+@media (max-width: 1024px) {
+  .bg-pink-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Mobiel */
+@media (max-width: 640px) {
+  .bg-pink-custom {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .bg-pink-custom .flex {
+    flex-direction: column; /* statistiekblokken onder elkaar */
+    gap: 1.5rem;
+  }
+}
+
+/* Basis styling: desktop */
+.quote p {
+  font-size: 2rem; /* text-2xl */
+  line-height: 1.5;
+}
+
+/* Tablet / iPad */
+@media (max-width: 1024px) {
+  .quote p {
+    font-size: 1.6rem;
+  }
+}
+
+/* Mobiel */
+@media (max-width: 640px) {
+  .quote p {
+    font-size: 1.1rem; /* kleiner op mobiel */
+    padding-left: 1rem; /* beetje marge links/rechts */
+    padding-right: 1rem;
+  }
+}

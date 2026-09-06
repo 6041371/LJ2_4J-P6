@@ -1,0 +1,89 @@
+RewriteEngine On
+
+# =========================
+# Algemene PHP fallback
+# =========================
+# Zorgt dat /pagina automatisch pagina.php wordt
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [NC,L]
+
+
+# =========================
+# Hoofdpagina's
+# =========================
+RewriteRule ^$ index.php [NC,L]
+RewriteRule ^home/?$ index.php [NC,L]
+
+RewriteRule ^over/?$ over.php [NC,L]
+RewriteRule ^over-ons/?$ over-ons.php [NC,L]
+
+RewriteRule ^contact/?$ contact.php [NC,L]
+RewriteRule ^zoek/?$ zoek.php [NC,L]
+RewriteRule ^login/?$ login.php [NC,L]
+RewriteRule ^admin/?$ admin.php [NC,L]
+
+
+# =========================
+# Diensten & expertise
+# =========================
+RewriteRule ^diensten/?$ diensten.php [NC,L]
+RewriteRule ^dienst/?$ dienst.php [NC,L]
+
+RewriteRule ^expertise/?$ expertise.php [NC,L]
+RewriteRule ^expertises/?$ expertises.php [NC,L]
+
+RewriteRule ^interim/?$ interim.php [NC,L]
+RewriteRule ^coaching/?$ coaching.php [NC,L]
+RewriteRule ^audits/?$ audits.php [NC,L]
+RewriteRule ^kwaliteitszorg/?$ kwaliteitszorg.php [NC,L]
+RewriteRule ^open-leermaterialen/?$ open-leermaterialen.php [NC,L]
+RewriteRule ^onderwijskwaliteit/?$ onderwijskwaliteit.php [NC,L]
+RewriteRule ^onderwijsresultaten/?$ onderwijsresultaten.php [NC,L]
+RewriteRule ^basisvaardigheden/?$ basisvaardigheden.php [NC,L]
+RewriteRule ^visieontwikkeling/?$ visieontwikkeling.php [NC,L]
+RewriteRule ^werving-en-selectie/?$ werving-en-selectie.php [NC,L]
+RewriteRule ^trainingen/?$ audittraining.php [NC,L]
+RewriteRule ^SchoolleidersvanNu/?$ schoolleidersvannu.php [NC,L]
+RewriteRule ^leerlingenpopulatieinbeeld/? leerlingenpopulatie-in-beeld-brengen.php [NC,L]
+
+
+
+
+# =========================
+# Artikelen
+# =========================
+RewriteRule ^artikelen/?$ artikel.php [NC,L]
+
+RewriteRule ^artikel1/?$ artikel1.php [NC,L]
+RewriteRule ^artikel2/?$ artikel2.php [NC,L]
+RewriteRule ^artikel3/?$ artikel3.php [NC,L]
+RewriteRule ^artikelen/?$ artikelen.php [NC,L]
+
+# Artikel met ID (optioneel, voor later)
+RewriteRule ^artikel/([0-9]+)/?$ artikel.php?id=$1 [NC,L]
+
+
+# =========================
+# Vacatures
+# =========================
+RewriteRule ^vacatures/?$ vacatures.php [NC,L]
+
+RewriteRule ^vacature1/?$ vacature1.php [NC,L]
+RewriteRule ^vacature2/?$ vacature2.php [NC,L]
+RewriteRule ^vacature3/?$ vacature3.php [NC,L]
+
+# Vacature met ID (optioneel, voor later)
+RewriteRule ^vacatures/([0-9]+)/?$ vacatures.php?id=$1 [NC,L]
+
+
+# =========================
+# Overige pagina's
+# =========================
+RewriteRule ^professionals/?$ professionals.php [NC,L]
+RewriteRule ^professionaliteit/?$ professionaliteit.php [NC,L]
+RewriteRule ^community/?$ community.php [NC,L]
+RewriteRule ^quote/?$ quote.php [NC,L]
+RewriteRule ^leonie/?$ leonie.php [NC,L]
+RewriteRule ^harald/?$ harald.php [NC,L]
+RewriteRule ^kennisbank/?$ kennisbank.php [NC,L]

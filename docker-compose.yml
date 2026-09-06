@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile   # Gebruik Dockerfile
-    container_name: php-web
+    container_name: today-web
     ports:
       - "8080:80"
     volumes:
@@ -17,7 +17,7 @@ services:
 
   db:
     image: mysql:8.1
-    container_name: mysql-db
+    container_name: today-db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: phplessen
@@ -32,7 +32,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: today-admin
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: root
